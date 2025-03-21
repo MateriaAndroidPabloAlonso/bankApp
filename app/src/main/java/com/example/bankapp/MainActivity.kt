@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.bankapp.components.Header
 import com.example.bankapp.ui.theme.BankAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -38,7 +39,7 @@ fun HomeScreen(innerPadding : PaddingValues) {
             .padding(innerPadding)
             .padding(20.dp)
     ) {
-
+        Header()
     } // Fin columna
 }
 
