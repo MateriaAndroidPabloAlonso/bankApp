@@ -33,7 +33,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun HomeScreen(innerPadding : PaddingValues) {
     Column (
-
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(innerPadding)
+            .padding(20.dp)
     ) {
 
     } // Fin columna
