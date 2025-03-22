@@ -29,6 +29,7 @@ import com.example.bankapp.ui.theme.BankAppTheme
 import com.example.bankapp.ui.theme.CardBeige
 import com.example.bankapp.ui.theme.CardGreen
 import com.example.bankapp.ui.theme.CardPurple
+import com.example.bankapp.ui.theme.TextColor
 
 @Composable
 fun Statistics() {
@@ -52,11 +53,12 @@ fun Statistics() {
                     )
                 Text(
                     text = "Actividad",
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    color = TextColor
                 )
                 Text(
                     text = "de la semana",
-                    color = Color.Gray,
+                    color = TextColor,
                     fontSize = 13.sp
                 )
             }
@@ -77,11 +79,13 @@ fun Statistics() {
                 ) {
                     Text(
                         text = "Ventas",
-                        fontWeight = FontWeight.Light
+                        fontWeight = FontWeight.Light,
+                        color = TextColor
                     )
                     Text(
                         text = "$280.99",
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.Bold,
+                        color = TextColor
                     )
                 }
             }
@@ -97,11 +101,13 @@ fun Statistics() {
                 ) {
                     Text(
                         text = "Ganancias",
-                        fontWeight = FontWeight.Light
+                        fontWeight = FontWeight.Light,
+                        color = TextColor
                     )
                     Text(
                         text = "$280.99",
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.Bold,
+                        color = TextColor
                     )
                 }
             }

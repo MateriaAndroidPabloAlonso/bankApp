@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -25,9 +26,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.bankapp.components.Header
 import com.example.bankapp.components.Statistics
-import com.example.bankapp.components.TransactionRow
+import com.example.bankapp.components.TransactionItem
 import com.example.bankapp.models.shops
+import com.example.bankapp.ui.theme.BackgroundColor
 import com.example.bankapp.ui.theme.BankAppTheme
+import com.example.bankapp.ui.theme.TextColor
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +53,7 @@ fun HomeScreen(innerPadding : PaddingValues) {
             .fillMaxSize()
             .padding(innerPadding)
             .padding(20.dp)
+            .background(BackgroundColor)
     ) {
         Header()
         Spacer(modifier = Modifier.padding(20.dp))
@@ -61,11 +65,13 @@ fun HomeScreen(innerPadding : PaddingValues) {
             Text(
                 text = "Transacciones",
                 fontWeight = FontWeight.Bold,
-                modifier = Modifier.weight(1f)
+                modifier = Modifier.weight(1f),
+                color = TextColor
             )
             Text(
                 text = "See all",
-                textAlign = TextAlign.End
+                textAlign = TextAlign.End,
+                color = TextColor
 
             )
         }
@@ -73,7 +79,7 @@ fun HomeScreen(innerPadding : PaddingValues) {
             modifier = Modifier.padding(top = 10.dp)
         ) {
             itemsIndexed(shops) { index, shop ->
-                TransactionRow(transaction = shop, index = index)
+                TransactionItem(transaction = shop, index = index)
                 Spacer(modifier = Modifier.padding(5.dp))
             }
         }

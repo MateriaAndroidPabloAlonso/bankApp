@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.bankapp.ui.theme.BankAppTheme
 import com.example.bankapp.ui.theme.CardPurple
+import com.example.bankapp.ui.theme.TextColor
 
 @Composable
 fun Header() {
@@ -52,12 +53,13 @@ fun Header() {
             Text(
                 text = "Hola Pablo",
                 fontSize = 32.sp,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                color = TextColor
             )
             Text(
                 text = "Bienvenido!",
                 fontSize = 18.sp,
-                color= Color.Gray
+                color = TextColor
             )
         }
 

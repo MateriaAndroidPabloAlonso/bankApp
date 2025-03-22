@@ -22,11 +22,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.bankapp.models.Shop
 import com.example.bankapp.models.shops
+import com.example.bankapp.ui.theme.AccentBlack
+import com.example.bankapp.ui.theme.AccentBlue
 import com.example.bankapp.ui.theme.BankAppTheme
+import com.example.bankapp.ui.theme.TextColor
 
 @Composable
-fun TransactionRow(transaction: Shop, index: Int) {
-    val boxColor = if (index % 2 == 0) Color.Black else Color.Blue
+fun TransactionItem(transaction: Shop, index: Int) {
+    val boxColor = if (index % 2 == 0) AccentBlack else AccentBlue
     Row (
         modifier = Modifier.fillMaxWidth()
     ){
@@ -48,12 +51,13 @@ fun TransactionRow(transaction: Shop, index: Int) {
             Text(
                 text = transaction.name,
                 fontWeight = FontWeight.Bold,
-                fontSize = 18.sp
+                fontSize = 18.sp,
+                color = TextColor
             )
             Text(
                 text = transaction.category,
-                color = Color.Gray,
-                fontSize = 14.sp
+                fontSize = 14.sp,
+                color = TextColor
             )
         }
         Column (
@@ -62,11 +66,12 @@ fun TransactionRow(transaction: Shop, index: Int) {
             Text(
                 text = "-$${transaction.montoGastado}",
                 fontWeight = FontWeight.Bold,
-                fontSize = 18.sp
+                fontSize = 18.sp,
+                color = TextColor
             )
             Text(
                 text = transaction.hora,
-                color = Color.Gray,
+                color = TextColor,
                 fontSize = 14.sp
             )
         }
@@ -79,6 +84,6 @@ fun TransactionRow(transaction: Shop, index: Int) {
 @Composable
 fun TransactionPreview() {
     BankAppTheme {
-        TransactionRow(transaction = shops[0], 1)
+        TransactionItem(transaction = shops[0], 1)
     }
 }
